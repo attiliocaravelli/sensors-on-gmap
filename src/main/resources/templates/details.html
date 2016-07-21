@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+   <title>Technical Test</title>
+	<!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+ 
+      <div th:if="${not #lists.isEmpty(sensor.alerts)}">
+        <h2>Alerts</h2>
+        <table class="table table-striped">
+            <tr>
+            	<th>Id</th>
+            	<th>Date of event</th>
+                <th>Description</th>
+            </tr>
+            <tr th:each="alert : ${sensor.alerts}">
+                <td th:text="${alert.id}">ID</td>
+                <td th:text="${alert.timestamp}">Date of event</td>
+                <td th:text="${alert.description}">Description</td>
+            </tr>
+        </table>
+      </div>  
+      
+      <div th:if="${not #lists.isEmpty(sensor.readings)}">
+        <h2>Temperatures</h2>
+        <table class="table table-striped">
+            <tr>
+            	<th>Id</th>
+            	<th>Date</th>
+                <th>Temperature</th>
+                <th>Unit</th>
+            </tr>
+            <tr th:each="reading : ${sensor.readings}">
+                <td th:text="${reading.id}">ID</td>
+                <td th:text="${reading.timestamp}">Date</td>
+                <td th:text="${reading.temperature}">Value</td>
+                <td th:text="${reading.unit}">Unit</td>
+            </tr>
+        </table>
+      </div>    
+</div>
+
+</body>
+</html>

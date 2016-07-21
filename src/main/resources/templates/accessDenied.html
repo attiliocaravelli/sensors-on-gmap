@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+<title>Technical Test</title>
+<!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+	<div class="container">
+		<!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->	
+		Dear <strong><td th:text="${user}"></td></strong>, You are not authorized to access this page
+	</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <title>Technical Test</title>
+	<!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+    
+    <script src="../static/js/angular.js"
+			th:src="@{/js/angular.js}"></script>
+			
+    <script src="../static/js/googleapis.js"
+    		th:src="@{/js/googleapis.js}"></script>
+    		
+    <script src="../static/js/sensorsmap.js"
+    		th:src="@{/js/sensorsmap.js}"></script>
+    		
+	<div ng-app="mapApp" ng-controller="mapCtrl">
+        <div id="map"></div>
+	</div>
+</div>
+
+</body>
+</html>
